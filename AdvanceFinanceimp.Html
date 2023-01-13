@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance </title>
+    <link rel="stylesheet" href=".css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       body{
+           font-family: 'Nunito Sans', sans-serif;
+           scroll-behavior: smooth;
+          
+       }
+       
+       .navbar{
+           display:flex;
+           align-items: center;
+           padding: 20px;
+       }
+       nav{
+           flex: 1;
+           text-align: right;
+       }
+       nav ul{
+           display: inline-block;
+           list-style-type: none;
+       }
+       nav ul li{
+           display: inline-block;
+           margin-right: 30px;
+       }
+       a{
+           text-decoration: none;
+           color: #555;
+       }
+       p{
+           color: #555;
+       
+       }
+       .container{
+           max-width: 1300px;
+           margin: auto;
+           padding-left: 25px;
+           padding-right: 25px;
+       }
+       .row{
+           display: flex;
+           align-items:center;
+           flex-wrap: wrap;
+           justify-content: space-around;
+       }
+       .col-2{
+           flex-basis: 50%;
+           min-width: 300px;
+       }
+       .col-2 img{
+           max-width: 100%;
+           padding: 100px 0;
+       }
+       .col-2 h1{
+           font-size: 50px;
+           line-height: 60px;
+           margin: 25px 0;
+           color: rgb(127, 128, 233);
+       }
+       .btn {
+           display: inline-block;
+           background: rgb(74, 25, 207);
+           color: white;
+           padding:8px 30px ;
+           margin: 30px 0;
+           border-radius: 30px;
+           transition: background 0.5s;
+       }
+       .btn:hover{
+           background: #563434;;
+       }
+       .header{
+           background: radial-gradient(#fff, #b9b5b5);
+       }
+       .header .row{
+           margin-top: 70px ;
+           
+       }
+       .categories{
+           margin: 70px 0;
+       }
+       .col-3{
+           flex-basis: 30%;
+           min-width: 250px;
+           margin-bottom: 30px;
+       }
+       .col-3 img{
+           width: 110%;
+       }
+       .small-container{
+           max-width: 1080px;
+           margin: auto;
+           padding-left: 25px;
+           padding-right: 25px;
+       }
+       .col-4{
+           flex-basis: 25%;
+           padding: 10px;
+           min-width: 200px;
+           margin-bottom: 50px;
+           transition: transform 0.5s;
+       }
+       .col-4 img{
+           width: 100%;
+       }
+       .title {
+           text-align: center;
+           margin: 0 auto 80px;
+           position: relative;
+           line-height: 60px;
+           color: black;
+       
+       }
+       .title::after{
+           content: '';
+           background: #ff523b;
+           width: 80px;
+           height: 5px;
+           border-radius: 5px;
+           position: absolute;
+           bottom: 0;
+           left:50%;
+           transform: translateX(-50%);
+       }
+       h4{
+           font-weight: normal;
+           color: #555;
+       }
+       .col-4 p{
+           font-size: 14px;
+           }
+       .rating .fa{
+           color: darkgrey;
+       }
+       .col-4:hover{
+           transform: translateY(-5px)
+       }
+       .offer1{
+           background: radial-gradient ;
+       
+       }
+       .col-2 .offer-img{
+           padding: 50px;
+       }
+       small{
+           color: #555;
+       }
+       .testimonial{
+           padding-top: 100px;
+           }
+        .testimonial .col-3{
+               text-align: center;
+               padding: 40px 20px;
+               box-shadow: 0 0 20px 0px rgba(0,0,0,1);
+               cursor: pointer;
+               transition: transform 0,5s;
+           }
+       .testimonial .col-3 img{
+               width: 50px;
+               margin-top: 20px;
+               border-radius: 50%;
+           }
+           .testimonial .col-3:hover{
+               transform: translateY(-10px);
+           }
+           .fa.fa-quote-left{
+               font-size: 34px;
+               color: rgb(43, 15, 184);
+           }
+           .col-3 p{
+               font-size: 12px;
+               margin: 12px 0;
+               color: #777;
+           }
+           .testimonial .col-3 h3{
+               font-weight: 600;
+               color:#555;
+               font-size: 16px;
+           }
+           .brands{
+               margin: 100px auto;
+           }
+           .col-5{
+               width: 160px;
+           }
+           .col-5 img{
+               width: 50%;
+               margin: 0 auto;
+               cursor: pointer;  
+               filter: grayscale(50%);
+               content: "";
+                display: table;
+                clear: both;
+               float: left;
+               padding: 5px;
+              
+           
+               
+           }
+           .col-5 img:hover{
+               filter:grayscale(0)
+           }
+           .footer{
+               background: #000;
+               color: #8a8a8a;
+               font-size: 14px;
+               padding: 60px 20px;
+           }
+       .footer p{
+           color: #8a8a8a;
+           }
+       
+           .footer h3{
+               color: #fff;
+               margin-bottom: 20px;
+       
+           }
+           .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+               max-width: 250px;
+               margin-bottom: 20px;
+           }
+       
+           .footer-col-1 {
+               flex-basis: 30%;
+           }
+           .footer-col-2{
+               flex: 1;
+               text-align: center;
+           }
+       .footer-col-2 img{
+           width: 180px;
+           margin-bottom: 20px;
+       }
+       .footer-col-3, .footer-col-4{
+           flex-basis: 12%;
+           text-align: center;
+       }
+       ul{
+           list-style-type: none;
+       
+       }
+       .app-logo{
+           margin-top: 20px;
+       }
+       .app-logo img{
+           width: 140px;
+       }
+       .footer hr{
+           border:none;
+           background: #b5b5b5;
+           height: 1px;
+           margin: 20px 0;
+       }
+       .menu-icon{
+           width: 28px;
+           margin-left: 20px;
+           display: none;
+       }
+       @media only screen and (max-width:800px){
+           nav ul{
+               position: absolute;
+               top: 70px;
+               left: 0;
+               background: #333;
+               width: 100%;
+           }
+       
+           .logo1 img{
+               border-radius: 100%;
+           }
+        nav ul li{
+           display: block;
+           margin-right: 50px;
+           margin-top: 10px;
+           margin-bottom: 10px;
+        }
+           nav ul li a{
+               color: #fff;
+       
+           }
+           .menu-icon{
+               cursor: pointer;
+               display: block;
+           }
+           @media only screen and (max-width:600px){
+            .row{
+               text-align: center;
+            }
+            .col-2, .col-3, .col-4{
+               flex-basis: 100%;
+            }
+           }
+          .row1::after{
+           content: "";
+           display: table;
+           clear: both;
+
+        
+       }
+       
+       .table container{
+            padding: 0 10%;
+            margin: 40px auto 0;}
+        .heading{
+            font-size: 40px;
+            text-align: center;
+            color: #f1f1f1;
+            margin-bottom: 40px;
+
+        }
+        .table{
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+        .table thead{
+            background-color: #ee2828;
+        }
+        .table thead tr{
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.35px;
+            color:#FFFFFF;
+            opacity: 1;
+            padding: 12px;
+            vertical-align: top;
+            border: 1px solid #dee2e685;}
+            .table tbody tr td{
+                font-size: 14px;
+                letter-spacing: 0.35px;
+                font-weight: normal;
+                color: #f1f1f1;
+                background-color: #3c3f44;
+                padding: 8px;
+                text-align: center;
+                border: 3px solid #dee2e685;
+            } 
+            .table .text_open{
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 0.35px;
+                color:#FF1046;
+            }
+       .table tbody tr td .btn{
+         width: 130px;
+         text-decoration: none;
+         display: inline-block;
+        line-height: 35px;
+         display: block;
+         background-color: white;
+         font-weight: medium;
+         color: #080707;
+         text-align: center;
+         vertical-align: middle;
+         user-select: none;
+         border: 1px solid transparent;
+         font-size: 14px;
+         opacity: 1;
+         border-radius: 50px; }
+
+         .table-container{
+            flex-grow: 1;
+         }
+       @media (max-width:768px){
+        .table thead{
+            display: none;
+
+        }
+        .table, .table tbody, .table tr, .tabletd{
+            display: block;
+            width: 100%;
+
+        }
+        .table tr{ margin-bottom: 15px;}
+        .table tbody tr td{
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        .table td:before{
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 50%;
+            padding-left: 15px;
+            font-family: 600;
+            font-size: 14px;
+            text-align: left;
+
+        }
+       }
+
+       
+       
+       }
+       
+       
+
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;1,200;1,900&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+              <img src="https://lh3.googleusercontent.com/-AgsLyzoPLJlFjJ7jKksxlc3PXkVn2r-5Opiq6wJ4fbahxT_dr5_GJVsAFN0tWTqEJL2kBd2N4OCpZTUCl9PbYsmzXJTdWtkT94IoH_38pUBDhjJtS4Z_TesCwCCr0CJ6v2Utn6eJA=w2400"   height="80px" >
+            </div>
+    </div>
+        <nav>
+            <ul id="menuitems">
+                <li><a href="#1" class="active">Loans </a></li>
+                <li><a href="#2" class="active">Products</a></li>
+                <li><a href="#3">Rates&Terms</a></li>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="#5">About Us</a></li>
+                
+            <i class="fa fa-bars" class="menu-icon" onclick="menutoggle()"></i>
+
+
+            </ul>
+
+
+        </nav>
+        <img src="" ">
+        <img src="" class="menu-i">
+
+    
+        <div class="row" id="1">
+            <div class="col-2"> <section class="section1 ">
+                <h1> PURSUE YOUR GOALS WITH A
+                    PERSONAL
+                    LOAN <br></h1>
+                   <p>Whatever your goals, a personal loan can help you reach them faster. <br>
+                     Borrow $2,000 - $35,000* for things like a medical bill, a home project, or an unexpected expense.
+                     <p>Sometimes, you need money now and can't wait for a long loan process. You need a quick loan to cover an emergency expense as soon as possible.  <br>
+                         So what exactly is a quick loan?  <br>
+                          A quick loan is a loan that can get you the funds you need to cover expenses quickly, as soon as the same day you apply.  Quick loans are a great alternative to a bank loan or home equity loan, which can take weeks or even months after your application to receive a decision and funding. 
+                        Our  loans for bad credit are designed for anyone who wants to borrow money quickly but doesn’t have a great credit score. In many cases, you can apply online and get approved right away. Upon approval, We will fund your loan that same day, within 24 hours, or in a few business days. You’ll repay the cash loan according to the terms listed in your agreement <br> 
+                        <br> 
+   
+   
+                         </p>
+                    
+                    </p>
+                     <a href="APPLY.HTML" class="btn" onclick="alert('Contact us on - (888)-831-8691')"> Check your loan option &#8594;</a>
+
+            </div> 
+        </section>
+            <div class="col-2">
+                <img src="https://lh3.googleusercontent.com/HP78qN8vOysQfpJThcwjreS2745KZjFI7x8rC4AnOBD1BrK4fZDgMp9-Bs7n82Neu66SsSg8cBBL9TarwJr4sacnL9nMrVg7OVhnEqUnm23KUPAXaQ07m0cRjUby5pyVDqmO8ZBwYg=w2400"  class ="" width="400px">
+              
+
+            </div>
+        </div>
+        <!----featured categories----->
+            <div class="categories">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-3"> 
+                            <img src="https://images.ctfassets.net/vrxttq978is8/4JMi0v3jeogi5GyaaKZRGN/b9327e9caffad630f77c736805640471/Text_Message.png?w=800&q=50" >
+                        </div>
+                        <div class="col-3"> </div>
+                        <img src="https://lh3.googleusercontent.com/HsktdCBl1TxBkc2VDT3jOem10ubj_5bulByyjW8CH_kViKzt5JbXJDFBdGeBcMu6If0xsBIaua-5He2dRiOTO3AC_0HDd7sIMSGKQYjpFKLWnWXCxlIkCx0P0BGRDxoQnsaUa7dT=w2400" height="250px">
+                        
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                
+
+
+            </div>
+
+
+
+    </div>
+</div>
+<div class="small-container" id="2">
+    <h2 class="title"> Our -Featured Products- </h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="https://lh3.googleusercontent.com/b-g1u2uQ0i6WojQIlDgPW5nGMCIx58mkeOYYD2DhjiOcSRe8yd7Vi0pvZPox359QgMDghGv0YfjqnNH0rdgfl77oRvt9DZ5O0RKM0qgzaCYndjMW3yP8zrVlMwBp8XIctJYtGAXw=w2400" >
+            <h4> <b > The Lending Bee -- <br>
+                Check Paper Highest security with Hologram </b></h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p> <B>$135.00 </B></p>
+            <a href="" class="btn" onclick="alert('Contact us on - (888)-831-8691')"> Buy Now &#8594</a>
+        </div>
+        <div class="col-4">
+            <img src="https://lh3.googleusercontent.com/Pv_7fF50KQI7-tIa2gMH2IH8ZhkSbZQB3G6RkQKj077T19WTzSYZgMB9A8zgSE27F9oJ7TtLp8Rfc7yYHpxaiPNmSkNnw5KArBTPCvoCL6sJu_JSl55BBKnJkY8ghWzO4v0zJ0W2=w2400" >
+            <h4> <b> Design your card--- <br>
+                The Lending Bee Visa Prepaid Cards can be used anywhere where Visa are accepted. </b></h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+        </div>
+        <p> <B>$150-$250.00 </B></p>
+        <a href="" class="btn" onclick="alert('Contact us on - (888)-831-8691')"> Buy Lending Bee  Visa card &#8594</a>
+    </div>
+    <div class="col-4">
+        <img src="https://lh3.googleusercontent.com/2KgFhStWt5DPfgTIHEyrQCNAO86eA4isadJtLhoncEIAOlQ9b5RZ8beaCcsu2b5Va9FunEkMQwYxI8Cd9rj6Il_Ic-Rdy4vpF-xXVk-2HNixYQR6PyjbsrHOSb3yPsyRp3u0FATn=w2400" >
+        <h4> <b> Crypto Wallet - <br>
+            A line of credit loan at Cryptocurrency wallet </b></h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+    <p> <B>$249.00 </B></p>
+    <a href="" class="btn" onclick="alert('Contact us on - (888)-831-8691')"> Buy Now &#8594</a>
+</div>
+<div class="col-4">
+    <img src="https://lh3.googleusercontent.com/zG6QkPagO_ECTPzg6W-ZL_TbncKGPSYXwjKxpSV4sd1Vh9ujtKUId8bEytO37oChbdWQIYyjlN_kZeQeElDurGcSJsvVf0UvR5CHLmO0VvFXD8HUuRqhB7HvHIdtNezhC15D9d1a=w2400" >
+    <h4> <b> Delivery Service (in 2days)  </b></h4>
+<div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+</div>
+<p> <B>$60-$199.00 </B></p>
+<a href="" class="btn" onclick="alert('Contact us on - (888)-831-8691')"> Use service &#8594</a>
+</div>
+<div class="col-4">
+    <img src="https://lh3.googleusercontent.com/66WhKfzU_l3JWQoPKk-4R8TlUOLqrFw3hk0iSR5maGloMABIHXTnkVeZ6ztqZPJ-yQuudDCc3UGO5FUvYDOXAGkxnOF4DXmw7k4GOfyKp85O0LIUOuXLTyJMoDjJ1hE9kq5ucUOG=w2400" >
+    <h4> <b> Deposit to Open Account </b></h4>
+<div class="rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+</div>
+<p><B>  185$ - 500$</B></p>
+<a href="" class="btn" onclick="alert('Contact us on - (888)-831-8691')">  Enroll </a>
+    </div>
+    <div class="offer1">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="https://lh3.googleusercontent.com/jfONhcN8GgQS3uzZVT0CBSeVMhQcbfcJSP1C3GzqHuSSCuJBwKBVwiE9CEyiq72ps8goFRNX-qBCKBDf-OXpwuEZnPA7zlHny84VSYfBLZrb1bps8AvF2BrvePBhvJuwLlep_eSC=w2400" alt="" class="offer-img">
+            </div>
+            <div class="col-2" id="3">
+                
+                <h1>  <b> Lending Bee  </b> 
+                     Loan Rates & Terms </h1> 
+                     Since 1997, Lending Bee has helped millions of hardworking people with a variety of financial solutions including Payday Loans, Online Loans, Installment Loans, Title Loans and Personal Lines of Credit <br>
+                
+                <small> Loan amounts range from $2,000 to $35,000. APR ranges from 9.95% to 35.95%. Loan lengths range from 12 to 60   months. Administration fee up to 4.75%. <br>
+
+                    * If approved the actual loan amount, term, and APR amount of loan that a customer qualifies for may vary based on credit determination and state law. Minimum loan amounts vary by state. <br>
+                    
+                    ** Example: A  $ 2,000 loan with an administration fee of 2.75% ,so repayable in 24 monthly installments, would have an APR of 18.00% and monthly payments of $125.33. <br>
+                    
+                    †The decision process may take longer if additional documents are requested. Approval and loan terms will vary based on credit determination and state law. <br>
+                    
+                    ‡Funds are generally deposited via ACH for delivery next business day after approval if approved by 4:30pm CT Monday-Friday. (conditions) <br>
+
+                     **  <b> Consumer can avail the offer via our -Featured Products which is designed for them .If there's any Fraud report on their profile we solely provide them loan via our -Featured Products. </b>  </small> <br>
+                    <br>
+                    <br>
+
+
+                    <div class="col-2">
+                        <h1 class="heading"> The below information is based on typical loan examples. Other loan amounts may be available.</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th> Payment Method </th>
+                                    <th> Loan Amount</th>
+                                    <th> Esitmated </th>
+                                    <th> Annual Percentage Rate </th>
+                                    <th> Total Due </th>
+                                    <th> # </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Start date"> ACH
+                                        
+                                    </td> 
+                                    <td data-label="Start / End Time"> $5000</td>
+                                    <td data-label="batch type">  36 payments of $240 </td>
+                                    <td data-label="Training mode "> 25% </td>
+                                    <td data-label="Batch status"><span class=" text-open"> $8200</span></td>
+                                    <td data-label="#"><a href="#" class="btn"> OK </a></td>
+                
+                                 </tr>
+                                 <tr>
+                                    <td data-label="Start date"> Lending Bee Card
+                                        
+                                    </td> 
+                                    <td data-label="Start / End Time"> $5000</td>
+                                    <td data-label="batch type"> 36 payments of 190$ </td>
+                                    <td data-label="Training mode "> 15% </td>
+                                    <td data-label="Batch status"><span class=" text-open"> $6740</span></td>
+                                    <td data-label="#"><a href="#" class="btn"> OK</a></td>
+                                 </tr>
+                                 <tr>
+                                    <td data-label="Start date">Cyrpto Wallet
+                                        
+                                    </td> 
+                                    <td data-label="Start / End Time"> $5000</td>
+                                    <td data-label="batch type"> 36 payment of 190$</td>
+                                    <td data-label="Training mode "> 16% </td>
+                                    <td data-label="Batch status"><span class=" text-open"> $6840</span></td>
+                                    <td data-label="#"><a href="#" class="btn"> OK</a></td>
+                                 </tr>
+                                 <tr>
+                                    <td data-label="Start date"> Lending Bee Finance Account
+                                        
+                                    </td> 
+                                    <td data-label="Start / End Time"> $ 5000</td>
+                                    <td data-label="batch type"> 36 paymentof 170$ </td>
+                                    <td data-label="Training mode "> 13% </td>
+                                    <td data-label="Batch status"><span class=" text-open"> 6200$ </span></td>
+                                    <td data-label="#"><a href="#" class="btn"> OK </a></td>
+                                 </tr>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    I was in need of a few dollars and I needed it quick. Credit score isn't by no means good.  But I had to try anyways since it was only a $2000 loan. To my surprise I was approved. I've been trying to raise my credit score also so this was a win in 2 ways. The emergency money paid what needed to be paid, I'm sure tomorrow when I pay the loan off it sure can't hurt my credit, only help it. Thank you Possible for being there when I needed a few dollars quick. I will definitely be back if I ever need an emergency and need an emergency loan. 10 stars in my book!!!
+                </p>
+                     <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+      <i class="fa fa-star-o"></i>
+       <img src="user.jpg" alt="image">
+                
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                Everyone was very friendly, helpful and knowledgeable. I am very pleased with the service.</p>
+                     <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+      <i class="fa fa-star-o"></i>
+       <img src="https://lh3.googleusercontent.com/hct1cv6nRvBxwwx_GdyG1a6m8c6X835UCFUFMxe3EpDJ_JQM30OSi_EMivm0oCQvWC-DJHeZTSIuxk3lZxXWsnkR0sD3PPNdjJ1AAwAXWvBU0hBthTxWEoA7eV1rxVOl3PiE5trb=s225-p-k" alt="" class="src">
+                
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>People here are very helpful and ready to assist in your needs. And very patient. And very knowledgeable</p> 
+                     <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+      <i class="fa fa-star-o"></i>
+       <img src="user.jpg" alt="" class="src">
+
+                
+            </div>
+            <div class="col-0"> <img src="https://lh3.googleusercontent.com/MQdraAgZC9xx6z2E2Y5SAIG7mIAZDllhLNsMCH1PriiAug1HzGcpY7f0o3sf3Fq-c7zMzUFURvVQ4E-L7VvkM0WEmIJTK8bjjVqSlMc9xcCg11GSbtJ3jKgDs6dEPa2tngM5YlW2=s225-p-k"  ></div>
+        </div>
+    </div>
+  </div>
+  <div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="https://lh3.googleusercontent.com/fLqVuvf8PX2odnfza0MMdNA04_eWOid1ZTvcTzbeoHvBsyGUduZ2od5DafeQpIopgnyTNGyAQRA2Rc1hJUWHvM9ouQ9R3h6xqm7kzTFS6LWMB-DgDGHaHB1fAE4q_ouFICWi7A_k=w2400" >
+                <div class="col-5">
+                <img src="https://lh3.googleusercontent.com/exJNzWiONV1Y0TI9ahWkz5TUOa0G1dHuRLlN30btbXH3lWJVb1-MRg-VkxH4rmIAEnT1w0gn7uUBajwliBZ3sf9MssuXQVs3SRg9U-fBcVw_IpwGbc2FfkV8zO05JwuNkrLiIHsx=w2400"  >
+            </div>
+                <div class="col-5"> <br>
+                    <img src="bit2.jpg"  alt="Bitcoin" width="100%" >
+                </div>
+                <div class="col-5">
+                    <img src="https://lh3.googleusercontent.com/EJP_R3K4afqpBbkHtyLO7cIasFKCWyHV8n8OCFsK4Fhxt7pXXugBjiyxvU1sUjVfRhT4KqxHDPy00zrcYP6-wcUmSvNWUDIgdYVA1rCBNf0UsukDFZhap9IfqBBFOWDhYsjafbQ3=s225-p-k" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="footer" id="5">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3> Soon </h3>
+                <p> Downalod Our App for Android and IOS </p>
+            <div class="app-logo"> 
+                <img src="https://lh3.googleusercontent.com/UqQw3eCc-zcXEj2ntHPuGKWHQTzOdhFJp8BehUTNc-U0kV3EUVRkFxWEORTmInAJamFuUeWfc9GSJ2Aqp8tTaCYb3rLGBwQt45XZGaxq-1ktSc2p84vCMlCKjv_KoAcWyvMFbqBS=w2400" >
+            </div>
+            
+            </div>
+            <div class="footer-col-2">
+                <img src="https://lh3.googleusercontent.com/-AgsLyzoPLJlFjJ7jKksxlc3PXkVn2r-5Opiq6wJ4fbahxT_dr5_GJVsAFN0tWTqEJL2kBd2N4OCpZTUCl9PbYsmzXJTdWtkT94IoH_38pUBDhjJtS4Z_TesCwCCr0CJ6v2Utn6eJA=w2400" alt="" class="src">
+                <p>Advance Finance is a proud community lender that services thousands of individuals locally and online. We offer a variety of personalized financial solutions to fit your specific needs —  Personal Lines of Credit.
+
+                
+                    
+                    
+
+                </p>
+            </div>
+            <div class="footer-col-3"> 
+                <h3>Useful links </h3>
+                <ul>
+                    <li> Careers</li>
+                    <li> Newsroon </li>
+                    <li> Blog </li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3> Follow us</h3>
+                <ul>
+                    <li> Facebook</li>
+                    <li>Twitter </li>
+                    <li>Instagram </li>
+                </ul>
+            </div>
+        </div>
+        <hr><p class="copyright">
+            Copyright Lending Bee ,LLC
+        </p>
+    </div>
+  </div>
+
+  <script>
+    var menuitems= document.getElementbyId('menuitems');
+    menuitems.style.maxHeight ="0px";
+    function menutoggle(){
+        if(menuitems.style.maxHeight=="0px")
+        {menuitems.style.maxHeight="200px";
+    }
+        else {
+            menuitems.style.maxHeight="0px";
+        }
+    }
+
+       
+        
+
+
+
+
+
+
+        
+        
+        
+  </script>
+
+
+</body>
+</html>
